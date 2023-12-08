@@ -1,10 +1,12 @@
 import data.TestData;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.componets.RegistrationPage;
 
-public class PracticeFormWithJenkins  extends TestBase{
 
+@Tag("simple")
+public class PracticeFormWithJenkins  extends TestBase{
 
         RegistrationPage registrationPage = new RegistrationPage();
 
