@@ -18,7 +18,7 @@ public class TestData {
             subjects = faker.options().option("Hindi", "English", "History"),
             hobbies = faker.options().option("Sports", "Reading", "Music"),
             state = faker.options().option("NCR", "Haryana", "Rajasthan"),
-            picture = faker.options().option("picture.png", "picture2.jpg"),
+            picture = faker.options().option("picture.png", "picture2.png"),
             city = getCityRandom(state);
 
     public String getCityRandom(String state) {
