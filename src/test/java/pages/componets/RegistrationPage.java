@@ -40,7 +40,7 @@ public class RegistrationPage {
     TableResponsiveComponent tableResponsiveComponent = new TableResponsiveComponent();
 
 
-    @Step("Открываем страницу регистрации")
+    @Step("Открывем странице регистрации")
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
@@ -48,12 +48,14 @@ public class RegistrationPage {
 
         return this;
     }
+
     @Step("Вводим имя")
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
 
         return this;
     }
+
     @Step("Вводим фамилию")
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
@@ -82,14 +84,14 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Вводим предметы")
+    @Step("Указываем предметы")
     public RegistrationPage setSubjectsInput(String value) {
         subjectsInput.val(value).pressEnter();
 
         return this;
     }
 
-    @Step("Запоняем хобби")
+    @Step("Указываем хобби")
     public RegistrationPage setHobbiesWrapperInput(String value) {
         hobbiesWrapperInput.$(byText(value)).click();
 
@@ -149,6 +151,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Проверяем что обязательные поля подсвечены красным")
     public RegistrationPage checkNotCompleteForm() {
         firstNameInput.shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
 
