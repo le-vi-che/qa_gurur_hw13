@@ -59,8 +59,7 @@ public class PracticeFormWithJenkins extends TestBase {
     }
 
    @Test
-   @Disabled
-    @DisplayName("Проверка отправки пустой формы")
+   @DisplayName("Проверка отправки пустой формы")
     void negativeCompleteFormTest() {
 
         registrationPage.openPage()
