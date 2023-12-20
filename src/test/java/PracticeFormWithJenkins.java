@@ -1,9 +1,8 @@
 import data.TestData;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.componets.RegistrationPage;
+import pages.RegistrationPage;
 
 @Tag("simple")
 public class PracticeFormWithJenkins extends TestBase {

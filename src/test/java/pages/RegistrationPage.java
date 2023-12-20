@@ -1,7 +1,9 @@
-package pages.componets;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import components.CalendarComponent;
+import components.TableResponsiveComponent;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byText;
