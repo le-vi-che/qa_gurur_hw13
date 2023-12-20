@@ -11,7 +11,7 @@ public class PracticeFormWithJenkins extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     TestData testData = new TestData();
-  /*  @Test
+    @Test
     @DisplayName("Заполнение всех полей на форме регистрации и проверка их отображения")
     void fullCompleteFormTest() {
         registrationPage.openPage()
@@ -40,8 +40,6 @@ public class PracticeFormWithJenkins extends TestBase {
                 .checkResult("Address", testData.currentAddres)
                 .checkResult("State and City", testData.state + " " + testData.city);
     }
-
-   */
 
 
     @Test
