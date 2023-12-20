@@ -1,3 +1,4 @@
+import data.TestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -8,50 +9,35 @@ public class PracticeFormWithJenkins extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-    private String firstName = "fill",
-            lastName = "good",
-            userEmail = "qwerty@ty.ru",
-            genderUser = "Male",
-            userNumber = "8888888888",
-            dayBirth = "14",
-            monthBirth = "July",
-            yearBirth = "1992",
-            subjects = "Hindi",
-            hobbies = "Reading",
-            picture = "picture2.png",
-            currentAddres = "Spb, 363",
-            state = "Haryana",
-            city = "Karnal";
-
+    TestData testData = new TestData();
     @Test
     @DisplayName("Заполнение всех полей на форме регистрации и проверка их отображения")
     void fullCompleteFormTest() {
-
         registrationPage.openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setUserEmail(userEmail)
-                .setGenterWrapper(genderUser)
-                .setUserNumber(userNumber)
-                .setDateOfBirth(dayBirth, monthBirth, yearBirth)
-                .setSubjectsInput(subjects)
-                .setHobbiesWrapperInput(hobbies)
-                .setUploadPicture( picture)
-                .setCurrentAddress(currentAddres)
-                .setChooseState(state)
-                .setChooseCity(city)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setUserEmail(testData.userEmail)
+                .setGenterWrapper(testData.genderUser)
+                .setUserNumber(testData.userNumber)
+                .setDateOfBirth(testData.dayBirth, testData.monthBirth, testData.yearBirth)
+                .setSubjectsInput(testData.subjects)
+                .setHobbiesWrapperInput(testData.hobbies)
+                .setUploadPicture(testData.picture)
+                .setCurrentAddress(testData.currentAddres)
+                .setChooseState(testData.state)
+                .setChooseCity(testData.city)
                 .pressSubmit();
 
-        registrationPage.checkResult("Student Name", firstName + " " +lastName)
-                .checkResult("Student Email", userEmail)
-                .checkResult("Gender", genderUser)
-                .checkResult("Mobile", userNumber)
-                .checkResult("Date of Birth", dayBirth +" " + monthBirth + "," + yearBirth)
-                .checkResult("Subjects", subjects)
-                .checkResult("Hobbies", hobbies)
-                .checkResult("Picture", picture)
-                .checkResult("Address", currentAddres)
-                .checkResult("State and City", state + " " + city);
+        registrationPage.checkResult("Student Name", testData.firstName + " " +testData.lastName)
+                .checkResult("Student Email", testData.userEmail)
+                .checkResult("Gender", testData.genderUser)
+                .checkResult("Mobile", testData.userNumber)
+                .checkResult("Date of Birth", testData.dayBirth +" " + testData.monthBirth + "," + testData.yearBirth)
+                .checkResult("Subjects", testData.subjects)
+                .checkResult("Hobbies", testData.hobbies)
+                .checkResult("Picture", testData.picture)
+                .checkResult("Address", testData.currentAddres)
+                .checkResult("State and City", testData.state + " " + testData.city);
     }
 
 
@@ -60,15 +46,15 @@ public class PracticeFormWithJenkins extends TestBase {
     void partCompleteFormTest() {
 
         registrationPage.openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setGenterWrapper(genderUser)
-                .setUserNumber(userNumber)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setGenterWrapper(testData.genderUser)
+                .setUserNumber(testData.userNumber)
                 .pressSubmit();
 
-        registrationPage.checkResult("Student Name", firstName + " " +lastName)
-                .checkResult("Gender", genderUser)
-                .checkResult("Mobile", userNumber);
+        registrationPage.checkResult("Student Name", testData.firstName + " " +testData.lastName)
+                .checkResult("Gender", testData.genderUser)
+                .checkResult("Mobile", testData.userNumber);
     }
 
     @Test
