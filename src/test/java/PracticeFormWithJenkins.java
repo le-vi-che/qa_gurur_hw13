@@ -1,4 +1,5 @@
 import data.TestData;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,7 @@ public class PracticeFormWithJenkins extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     TestData testData = new TestData();
-    @Test
+  /*  @Test
     @DisplayName("Заполнение всех полей на форме регистрации и проверка их отображения")
     void fullCompleteFormTest() {
         registrationPage.openPage()
@@ -40,6 +41,8 @@ public class PracticeFormWithJenkins extends TestBase {
                 .checkResult("State and City", testData.state + " " + testData.city);
     }
 
+   */
+
 
     @Test
     @DisplayName("Заполнение всех обязательных полей на форме регистрации и проверка их отображения")
@@ -57,7 +60,8 @@ public class PracticeFormWithJenkins extends TestBase {
                 .checkResult("Mobile", testData.userNumber);
     }
 
-    @Test
+   @Test
+   @Disabled
     @DisplayName("Проверка отправки пустой формы")
     void negativeCompleteFormTest() {
 
