@@ -1,4 +1,5 @@
 gradle
+.idea
 # Compiled class file
 *.class
 
@@ -8,7 +9,6 @@ gradle
 # BlueJ files
 *.ctxt
 
-.idea
 gradlew
 gradlew.bat
 
