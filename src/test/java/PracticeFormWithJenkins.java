@@ -4,14 +4,13 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-
+@Tag("simple")
 public class PracticeFormWithJenkins extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
     TestData testData = new TestData();
     @Test
-    @Tag("positive")
     @DisplayName("Заполнение всех полей на форме регистрации и проверка их отображения")
     void fullCompleteFormTest() {
         registrationPage.openPage()
@@ -43,7 +42,6 @@ public class PracticeFormWithJenkins extends TestBase {
 
 
     @Test
-    @Tag("positive")
     @DisplayName("Заполнение всех обязательных полей на форме регистрации и проверка их отображения")
     void partCompleteFormTest() {
 
@@ -60,7 +58,6 @@ public class PracticeFormWithJenkins extends TestBase {
     }
 
    @Test
-   @Tag("negative")
    @DisplayName("Проверка отправки пустой формы")
     void negativeCompleteFormTest() {
 

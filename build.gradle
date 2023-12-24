@@ -52,14 +52,9 @@ tasks.withType(Test) {
     }
 }
 
-task positive_tests(type: Test) {
+task simple_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("positive")
+        includeTags("simple")
     }
 }
 
-task negative_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags("negative")
-    }
-}
